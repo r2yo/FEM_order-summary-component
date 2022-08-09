@@ -25,7 +25,7 @@ body {
   background-color: $cls-pale-blue;
 }
 
-.desktop-pattern , .mobile-pattern {
+.pattern{
   display: block;
   position: absolute;
   z-index: -1;
@@ -33,7 +33,13 @@ body {
   width: 100%;
 }
 
+.mobile-pattern{
+  width: 100%;
+  display: block;
+}
+
 .desktop-pattern{
+  width: 100%;
   display: none;
 }
 
