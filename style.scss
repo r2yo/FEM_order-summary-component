@@ -1,0 +1,165 @@
+$cls-pale-blue : hsl(225, 100%, 94%);
+$cls-bright-blue : hsl(245, 75%, 52%);
+$cls-very-pale-blue : hsl(225, 100%, 98%);
+$cls-desaturated-blue: hsl(224, 23%, 55%);
+$cls-dark-blue: hsl(223, 47%, 23%);
+
+@import url('https://fonts.googleapis.com/css2?family=Red+Hat+Display:wght@500;700;900&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-size: 16px;
+  font-family: 'Red Hat Display', sans-serif;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  overflow: hidden;
+  position: relative;
+  background-color: $cls-pale-blue;
+}
+
+.desktop-pattern , .mobile-pattern {
+  display: block;
+  position: absolute;
+  z-index: -1;
+  top: 0;
+  width: 100%;
+}
+
+.desktop-pattern{
+  display: none;
+}
+
+// CONTAINER
+
+.container {
+  max-width: 375px;
+  display: flex;
+  flex-direction: column;
+  border-radius: 25px;
+  overflow: hidden;
+}
+
+// INFO
+
+.info {
+  text-align: center;
+  background: white;
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+}
+
+.info > * {
+  margin-top: 2rem;
+}
+
+.title {
+  margin-top: 0;
+  font-weight: 900;
+  color: $cls-dark-blue;
+}
+
+.text {
+  color: $cls-desaturated-blue;
+  padding: 0 20px;
+}
+
+
+
+// PAY
+
+.pay {
+  display: flex;
+  align-items: center;
+  background: $cls-very-pale-blue;
+  padding: 1.3rem 1rem;
+  border-radius: 10px;
+  font-weight: 700;
+}
+
+.pay > * {
+  margin-right: 1rem;
+}
+
+.price-title {
+  color: $cls-dark-blue;
+}
+
+.price-number {
+  color: $cls-desaturated-blue;
+}
+
+.price-btn{
+  cursor: pointer;
+  margin-right: 0;
+  margin-left: auto;
+  background: transparent;
+  border: none;
+  color: $cls-bright-blue;
+  text-decoration: underline;
+}
+
+// BUTTONS
+
+.btn-primary , .btn-fade {
+  cursor: pointer;
+  border: none;
+  font-weight: 900;
+  font-size: 1rem;
+  border-radius: 10px;
+}
+
+.btn-primary {
+  padding: 1rem;
+  background: $cls-bright-blue;
+  color: white;
+  box-shadow: 0px 20px 16px $cls-pale-blue;
+}
+
+.btn-fade {
+  margin: 0 auto;
+  width: fit-content;
+  padding: 0;
+  margin-top: 1.5rem;
+  background: transparent;
+  color:  $cls-desaturated-blue;
+}
+
+
+// EFFECTS
+
+[class*='-btn'] , [class*='btn-'] {
+  transition: all ease 300ms;
+}
+
+.price-btn:hover {
+  text-decoration: none;
+  opacity: 0.5;
+}
+
+.btn-primary:hover {
+  opacity: 0.5;
+}
+
+.btn-fade:hover {
+  color: $cls-dark-blue;
+}
+
+// MEDIA QUERY
+
+@media screen and (min-width: 375px) {
+  .mobile-pattern{
+    display: none;
+  }
+  .desktop-pattern{
+    display: block;
+  }
+}
